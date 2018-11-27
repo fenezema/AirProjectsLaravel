@@ -4,6 +4,8 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicons -->
   <link href="{{asset('apFront/img/favicon.png')}}" rel="icon">
   <link href="{{asset('apFront/img/apple-touch-icon.png')}}" rel="apple-touch-icon">

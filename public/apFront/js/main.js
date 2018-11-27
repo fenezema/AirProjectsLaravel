@@ -259,7 +259,7 @@ jQuery(document).ready(function( $ ) {
       $('#editCurrentProfile').toggle();
       $('#editCurrentProfileSave').toggle();
   });
-
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
   $('#editCurrentProfileSave').click(function(){
       var git = $('#saveGithub').val();
       var web = $('#saveWebsite').val();
@@ -267,12 +267,15 @@ jQuery(document).ready(function( $ ) {
       var fname = $('#saveFirstname').val();
       var lname = $('#saveLastname').val();
       var descTitle = $('#saveDescTitle').val();
-      var desc = $('#saveDesc').text();
+      var desc = $('#saveDesc').val();
       console.log(git);
+      console.log(web);
+      console.log(phone);
+      console.log(fname);
+      console.log(lname);
+      console.log(descTitle);
+      console.log(desc);
       
-      var post = $.post('saveProfile',{github:git, website:web, phone:phone, firstname:fname, lastname:lname, descTitle:descTitle,describe:desc});
-      post.done(function(data){
-          $('#btEditcuUser').append('<button>hehe</button>')
-      })
+      var post = $.post('saveProfile',{_token: CSRF_TOKEN, github:git, website:web, phone:phone, firstname:fname, lastname:lname, descTitle:descTitle,describe:desc});
   });
 });

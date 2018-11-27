@@ -40,19 +40,19 @@ class HomeController extends Controller
         return view('pages.profile',compact('data'));
     }
 
-    public function saveProfile(Request $req)
+    public function saveProfile(Request $request)
     {
-        User::where('id',Auth::user()->id)->update([
-            'github' => $req->github,
-            'website' => $req->website,
-            'phone' => $req->phone,
-            'firstname' => $req->firstname,
-            'lastname' => $req->lastname,
-            'descTitle' => $req->descTitle,
-            'describe' => $req->describe,
+        $res = User::where('id',Auth::user()->id)->update([
+            'github' => $request->github,
+            'website' => $request->website,
+            'phone' => $request->phone,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'descTitle' => $request->descTitle,
+            'describe' => $request->describe,
         ]);
 
-        return redirect('/profile');
+        return redirect()->route('profile');
     }
 
     public function navbarData()

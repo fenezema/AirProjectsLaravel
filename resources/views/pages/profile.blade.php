@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <img class="img-responsive img-circle" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="">
+            <img class="img-responsive img-circle" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 25%;">
             <div class="container">
               <div class="row">
                 <div class="col-lg-12 content">

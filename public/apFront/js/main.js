@@ -229,11 +229,11 @@ jQuery(document).ready(function( $ ) {
   // });
   $('#editCurrentProfile').click(function(){
       var tempp = $('#cuGithub').text();
-      $('#cuGithub').hide();
+      $('#cuGithub').empty();
       var temp = $('#cuWebsite').text();
-      $('#cuWebsite').hide();
+      $('#cuWebsite').empty();
       var temp1 = $('#cuPhone').text();
-      $('#cuPhone').hide();
+      $('#cuPhone').empty();
       var temp2 = $('#cuName').text();
       temp2 = temp2.split(',');
       var temp2b = temp2[1];
@@ -242,11 +242,11 @@ jQuery(document).ready(function( $ ) {
         temp2a+=temp2b[i];
       }
       temp2 = temp2[0];
-      $('#cuName').hide();
+      $('#cuName').empty();
       var temp3 = $('#cuDescTitle').text();
-      $('#cuDescTitle').hide();
+      $('#cuDescTitle').empty();
       var temp4 = $('#cuDesc').text();
-      $('#cuDesc').hide();
+      $('#cuDesc').empty();
 
       $('#cuGithub').append('<div class="form-group"><input id="saveGithub" name="github" class"form-control" placeholder="github" value="'+tempp+'"></div>');
       $('#cuWebsite').append('<div class="form-group"><input id="saveWebsite" name="website" class"form-control" placeholder="website" value="'+temp+'"></div>');

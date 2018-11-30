@@ -276,6 +276,16 @@ jQuery(document).ready(function( $ ) {
       console.log(descTitle);
       console.log(desc);
       
-      var post = $.post('saveProfile',{_token: CSRF_TOKEN, github:git, website:web, phone:phone, firstname:fname, lastname:lname, descTitle:descTitle,describe:desc});
+      var post = $.post('saveProfile',{_token: CSRF_TOKEN, github:git, website:web, phone:phone, firstname:fname, lastname:lname, descTitle:descTitle,describe:desc},function(res){
+          $('#cuGithub').empty().append('<span style="font-size: 12px">'+res.github+'</span>');
+          $('#cuWebsite').empty().append('<span style="font-size: 12px">'+res.website+'</span>');
+          $('#cuPhone').empty().append('<span style="font-size: 12px">'+res.phone+'</span>');
+          $('#cuName').empty().text(res.lastname+", "+res.firstname);
+          $('#cuDescTitle').empty().text(res.descTitle);
+          $('#cuDesc').empty().text(res.describe);
+
+          $('#editCurrentProfile').toggle();
+          $('#editCurrentProfileSave').toggle();
+      });
   });
 });

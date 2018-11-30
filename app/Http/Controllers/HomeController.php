@@ -52,7 +52,8 @@ class HomeController extends Controller
             'describe' => $request->describe,
         ]);
 
-        return redirect()->route('profile');
+        $data = User::find(Auth::user()->id);
+        return Response::json($data);
     }
 
     public function navbarData()

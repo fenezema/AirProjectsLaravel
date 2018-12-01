@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ProjectsController@index')->name('home')->middleware('auth');
 Route::get('/navbarData','HomeController@navbarData');
 Route::get('/sidenavData','HomeController@sidenavData');
-Route::get('/profile','HomeController@profile')->name('profile');
-Route::post('/saveProfile','HomeController@saveProfile');
+Route::get('/profile','HomeController@profile')->name('profile')->middleware('auth');
+Route::post('/saveProfile','HomeController@saveProfile')->middleware('auth');
+Route::get('/getProject/{type}','ProjectTypeController@byProjectType')->name('byProjectType')->middleware('auth');

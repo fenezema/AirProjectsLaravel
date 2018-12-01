@@ -189,10 +189,28 @@ jQuery(document).ready(function( $ ) {
   $.get('navbarData',function(res){
       var nav = $('#navbar-dropdownJenis');
       for (var i = 0; i < res.length; i++) {
-          nav.append('<a class="dropdown-item ptypeFilter" href="">'+res[i].type_name+'</a>');
+          nav.append('<a class="dropdown-item" id="ptypeFilter" href="#">'+res[i].type_name+'</a>');
       }
-      nav.append('<a class="dropdown-item ptypeFilter" href="">Other</a>');
   });
+
+  $('#ptypeFilter').click(function(event){
+      event.preventDefault();
+      console.log('test');
+      var fil = $('#ptypeFilter').text();
+      $.get('getProject/'+fil,function(res){
+          $('#showProject').empty();
+          if (res.length==0) {
+              $('#projectCount').text('0 projects found')
+              $('#showProject').append('<label>No projects found</label>');
+          }
+          else{
+              for (var i = 0; i < res.length; i++) {
+                  $('#showProject').append('<div> <div class="icon"><i class="fa fa-grav"></i></div> <h4 class="title"><a href="">'+res[i].pname+'</a></h4> <p class="description"> <a href="#" style="margin-right: 1em;">HTML</a> <a href="#" style="margin-right: 1em;">PHP</a> <a href="#" style="margin-right: 1em;">Graphic Design</a></p> <p class="description">'+res[i].pdescription+'</p> <p class="description" style="font-size: 20px;margin-top: 1em;"><span class="badge badge-pill badge-success">Rp. '+res[i].pprice+'</span></p></div><hr>');
+              }              
+          }
+      })      
+  });
+
   var skill_tags = [];
   $.get('sidenavData',function(res){
       console.log(res);

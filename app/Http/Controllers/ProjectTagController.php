@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ProjectType;
+use App\ProjectTag;
 use Illuminate\Http\Request;
-use Response;
 
-class ProjectTypeController extends Controller
+class ProjectTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +15,6 @@ class ProjectTypeController extends Controller
     public function index()
     {
         //
-    }
-
-    public function byProjectType($type)
-    {
-        $datas = ProjectType::with('projects')->where('type_name',$type);
-        return Response::json($datas);
     }
 
     /**
@@ -48,10 +41,10 @@ class ProjectTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ProjectType  $projectType
+     * @param  \App\ProjectTag  $projectTag
      * @return \Illuminate\Http\Response
      */
-    public function show(ProjectType $projectType)
+    public function show(ProjectTag $projectTag)
     {
         //
     }
@@ -59,10 +52,10 @@ class ProjectTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ProjectType  $projectType
+     * @param  \App\ProjectTag  $projectTag
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProjectType $projectType)
+    public function edit(ProjectTag $projectTag)
     {
         //
     }
@@ -71,10 +64,10 @@ class ProjectTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ProjectType  $projectType
+     * @param  \App\ProjectTag  $projectTag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProjectType $projectType)
+    public function update(Request $request, ProjectTag $projectTag)
     {
         //
     }
@@ -82,10 +75,10 @@ class ProjectTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ProjectType  $projectType
+     * @param  \App\ProjectTag  $projectTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProjectType $projectType)
+    public function destroy(ProjectTag $projectTag)
     {
         //
     }

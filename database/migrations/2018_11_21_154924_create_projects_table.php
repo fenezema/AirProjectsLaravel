@@ -22,7 +22,6 @@ class CreateProjectsTable extends Migration
             $table->string('pname');
             $table->text('pdescription');
             $table->string('pprice');
-            $table->string('ptags')->nullable();
             $table->string('pduration');
             $table->string('pstatus');
             $table->string('pketerangan')->nullable();

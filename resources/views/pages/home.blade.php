@@ -56,7 +56,7 @@
           <div class="col-lg-9">
             <div class="box wow fadeInRight" data-wow-delay="0.2s">
             <div class="row">
-              <div class="col-sm-7" align="left"><label>{{$datas_count}} projects found</label></div>
+              <div class="col-sm-7" align="left"><label id="projectCount">{{$datas_count}} projects found</label></div>
               <div class="col-sm-2"></div>
               <div class="col-sm-2" align="left">
                 <div class="dropdown">
@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-            <div class="box wow fadeInRight" data-wow-delay="0.2s">
+            <div id="showProject" class="box wow fadeInRight" data-wow-delay="0.2s">
               @foreach($datas as $data)
               <div>
                 <div class="icon"><i class="fa fa-grav"></i></div>

@@ -18,7 +18,7 @@
             <a>Browse Projects</a>
             <ul>
               <li><a href="{{route('home')}}" id="allProjectShow">All Projects</a></li>
-              <li class="nav-item dropdown">
+              <li class="menu-has-children">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     By Category <span class="caret"></span>
                 </a>

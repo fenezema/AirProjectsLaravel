@@ -15,7 +15,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //
+        $datas = Projects::all();
+        $datas_count = count($datas);
+        return view('pages.home',compact('datas','datas_count'));
     }
 
     /**

@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->nullable();
             $table->string('level');
             $table->string('role');
+            $table->string('membership');
             $table->rememberToken();
             $table->timestamps();
         });

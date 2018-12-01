@@ -18,8 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'ProjectsController@index')->name('home')->middleware('auth');
-Route::get('/navbarData','HomeController@navbarData');
-Route::get('/sidenavData','HomeController@sidenavData');
+Route::get('/navbarData','HomeController@navbarData')->middleware('auth');
+Route::get('/sidenavData','HomeController@sidenavData')->middleware('auth');
+Route::get('/showProjects/navbarData','HomeController@navbarData')->middleware('auth');
+Route::get('/showProjects/sidenavData','HomeController@sidenavData')->middleware('auth');
 Route::get('/profile','HomeController@profile')->name('profile')->middleware('auth');
 Route::post('/saveProfile','HomeController@saveProfile')->middleware('auth');
-Route::get('/getProject/{type}','ProjectTypeController@byProjectType')->name('byProjectType')->middleware('auth');
+Route::get('/showProjects/{type}','ProjectsController@byProjectType')->name('byProjectType')->middleware('auth');
+Route::get('/workers','HomeController@index')->name('workers')->middleware('auth');

@@ -72,7 +72,8 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'saldo' => '0',
             'level' => "0",
-            'role' => "regular",
+            'role' => "po",
+            'membership' => "regular",
             'photo' => "default.jpg",
         ]);
     }

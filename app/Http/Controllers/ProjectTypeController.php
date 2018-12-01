@@ -18,12 +18,6 @@ class ProjectTypeController extends Controller
         //
     }
 
-    public function byProjectType($type)
-    {
-        $datas = ProjectType::with('projects')->where('type_name',$type);
-        return Response::json($datas);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

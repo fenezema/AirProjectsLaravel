@@ -20,6 +20,13 @@ class ProjectsController extends Controller
         return view('pages.home',compact('datas','datas_count'));
     }
 
+    public function byProjectType($type)
+    {
+        $datas = Projects::where('projecttype_id',$type)->get();
+        $datas_count = count($datas);
+        return view('pages.home',compact('datas','datas_count'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

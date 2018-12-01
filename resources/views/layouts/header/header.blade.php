@@ -18,20 +18,20 @@
             <a>Browse Projects</a>
             <ul>
               <li><a href="{{route('home')}}" id="allProjectShow">All Projects</a></li>
-              <li class="menu-has-children">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              <li >
+                <a id="navbarDropdown" role="button">
                     By Category <span class="caret"></span>
                 </a>
 
-                <div id="navbar-dropdownJenis" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <ul id="navbar-dropdownJenis">
                     <!-- <a class="dropdown-item">
                         
                     </a> -->
-                </div>
+                </ul>
               </li>
             </ul>
           </li>
-          <li><a href="#">Find a Worker</a></li>
+          <li><a href="{{route('workers')}}">Find a Worker</a></li>
           <li class="menu-has-children">
             <a>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</a>
             <ul>

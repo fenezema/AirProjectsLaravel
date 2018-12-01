@@ -1,4 +1,4 @@
-jQuery(document).ready(function( $ ) {
+$(document).ready(function( ) {
 
   // Back to top button
   $(window).scroll(function() {
@@ -186,53 +186,41 @@ jQuery(document).ready(function( $ ) {
     google.maps.event.addDomListener(window, 'load', initialize_google_map);
   }
 
-  $.get('navbarData',function(res){
-      var nav = $('#navbar-dropdownJenis');
-      for (var i = 0; i < res.length; i++) {
-          nav.append('<a class="dropdown-item" id="ptypeFilter" href="#">'+res[i].type_name+'</a>');
-      }
-  });
-
-  $('#ptypeFilter').click(function(event){
-      event.preventDefault();
-      console.log('test');
-      var fil = $('#ptypeFilter').text();
-      $.get('getProject/'+fil,function(res){
-          $('#showProject').empty();
-          if (res.length==0) {
-              $('#projectCount').text('0 projects found')
-              $('#showProject').append('<label>No projects found</label>');
+  $('#header').ready(function(){
+      $.get('navbarData',function(res){
+          console.log(res);
+          var nav = $('#navbar-dropdownJenis');
+          for (var i = 0; i < res.length; i++) {
+              nav.append('<li><a href="showProjects/'+res[i].id+'">'+res[i].type_name+'</a></li>');
           }
-          else{
-              for (var i = 0; i < res.length; i++) {
-                  $('#showProject').append('<div> <div class="icon"><i class="fa fa-grav"></i></div> <h4 class="title"><a href="">'+res[i].pname+'</a></h4> <p class="description"> <a href="#" style="margin-right: 1em;">HTML</a> <a href="#" style="margin-right: 1em;">PHP</a> <a href="#" style="margin-right: 1em;">Graphic Design</a></p> <p class="description">'+res[i].pdescription+'</p> <p class="description" style="font-size: 20px;margin-top: 1em;"><span class="badge badge-pill badge-success">Rp. '+res[i].pprice+'</span></p></div><hr>');
-              }              
+      });
+  });
+  
+  $('#homeDivSkillFilter').ready(function(){
+      var skill_tags = [];
+      $.get('sidenavData',function(res){
+          console.log(res);
+          for (var i = 0; i < res.length; i++) {
+              skill_tags.push(res[i].tags_name);
           }
-      })      
+      });
+      $('#homeSkillFilter').autocomplete({
+          source: skill_tags
+      });
+      $('#homeSkillFilter1').autocomplete({
+          source: skill_tags
+      });
+      $('#homeSkillFilter2').autocomplete({
+          source: skill_tags
+      });
+      $('#homeSkillFilter3').autocomplete({
+          source: skill_tags
+      });
+      $('#homeSkillFilter4').autocomplete({
+          source: skill_tags
+      });
   });
-
-  var skill_tags = [];
-  $.get('sidenavData',function(res){
-      console.log(res);
-      for (var i = 0; i < res.length; i++) {
-          skill_tags.push(res[i].tags_name);
-      }
-  });
-  $('#homeSkillFilter').autocomplete({
-      source: skill_tags
-  });
-  $('#homeSkillFilter1').autocomplete({
-      source: skill_tags
-  });
-  $('#homeSkillFilter2').autocomplete({
-      source: skill_tags
-  });
-  $('#homeSkillFilter3').autocomplete({
-      source: skill_tags
-  });
-  $('#homeSkillFilter4').autocomplete({
-      source: skill_tags
-  });
+  
   // $('#homeSkillFilter').keyup(function(){
   //     console.log(string);
   //     $.get('sidenavData',function(res){

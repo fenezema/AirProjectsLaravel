@@ -29,7 +29,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+        // $datas = User::where('role',"worker")->get();
+        $datas = User::all();
+        $datas_count = count($datas);
+        return view('pages.workers',compact('datas','datas_count'));
     }
 
     public function profile()
@@ -56,7 +59,8 @@ class HomeController extends Controller
 
     public function navbarData()
     {
-        return Response::json(ProjectType::all());
+        $datas = ProjectType::all();
+        return Response::json($datas);
     }
 
     public function sidenavData()

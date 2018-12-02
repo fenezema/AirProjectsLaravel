@@ -31,4 +31,9 @@ Route::get('/makeNew','ProjectsController@create')->name('newProject');
 /*
 sorry buat nyoba
 */
-Route::view('/browse-project','pages/browse-project');
+Route::get('/post-project', function () {
+    return view('pages.postproject');
+})->name('postproject');
+Route::get('/project', function () {
+    return view('pages.project');
+})->name('project');

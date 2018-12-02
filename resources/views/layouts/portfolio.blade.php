@@ -48,7 +48,7 @@
           <div class="col-md-4">
             <div class="box wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-pencil"></i></div>
+                <div class="icon"><i class="fa fa-universal-access"></i></div>
                 <h4 class="title">Logo Design</h4>
               </a>
             </div>
@@ -56,7 +56,10 @@
 
           <div class="col-md-4">
             <div class="box wow fadeInUp">
-              
+              <a href="#">
+                <div class="icon"><i class="fa fa-pencil"></i></div>
+                <h4 class="title">Graphic Design</h4>
+              </a>
             </div>
           </div>
 

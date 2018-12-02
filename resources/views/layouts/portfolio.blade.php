@@ -1,4 +1,4 @@
-    <section id="services" class="wow fadeInUp">
+    <section id="portfolio" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
           <h2>Popular Projects</h2>
@@ -7,58 +7,70 @@
       </div>
 
       <div class="container-fluid">
-        <div class="row">
+        <div class="row no-gutters">
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-html5"></i></div>
-                <h4 class="title">Website Design</h4>
+                <img src="{{asset('apFront/img/portfolio/project-1.jpg')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Website Design</h2></div>
+                </div>
               </a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-android"></i></div>
-                <h4 class="title">Mobile App</h4>
+                <img src="{{asset('apFront/img/portfolio/project-2.jpg')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Mobile App</h2></div>
+                </div>
               </a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-code"></i></div>
-                <h4 class="title">Website Development</h4>
+                <img src="{{asset('apFront/img/portfolio/project-3.jpg')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Website Development</h2></div>
+                </div>
               </a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-search"></i></div>
-                <h4 class="title">SEO</h4>
+                <img src="{{asset('apFront/img/portfolio/project-4.jpeg')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">SEO</h2></div>
+                </div>
               </a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-universal-access"></i></div>
-                <h4 class="title">Logo Design</h4>
+                <img src="{{asset('apFront/img/portfolio/project-5.png')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Logo Design</h2></div>
+                </div>
               </a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box wow fadeInUp">
+            <div class="portfolio-item wow fadeInUp">
               <a href="#">
-                <div class="icon"><i class="fa fa-pencil"></i></div>
-                <h4 class="title">Graphic Design</h4>
+                <img src="{{asset('apFront/img/portfolio/project-6.jpg')}}" style="height: 350px" alt="">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info"><h2 class="wow fadeInUp">Graphic Design</h2></div>
+                </div>
               </a>
             </div>
           </div>

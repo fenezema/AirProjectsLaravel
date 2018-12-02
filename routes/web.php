@@ -32,3 +32,7 @@ Route::post('/makeNew','ProjectsController@store')->name('storeProject');
 Route::get('/project', function () {
     return view('pages.project');
 })->name('project');
+
+Route::get('/terms', function () {
+    return view('pages.useragreement');
+})->name('terms');

@@ -87,9 +87,9 @@
             </h2>
             <h3 id="cuDescTitle">{{$data->descTitle}}</h3>
             <p id="cuDesc">{{$data->describe}}</p>
-            @if(Auth::user()->role=="worker")
+            @if($data->role=="worker")
             <div class="box wow fadeInRight" data-wow-delay="0.2s">
-              <h5>I'm good with <i class="fa fa-edit"></i></h5>
+              <h5>I'm good with</h5>
               <br>
               <div class="row" id="editSkills">
                 @for($i = 0;$i< 3;$i+=1 )
@@ -105,7 +105,7 @@
             <h3>Balance : </h3>
             <h4><mark>$ {{$data->saldo}}</mark></h4>
             <br>
-            @if(Auth::user()->role=="worker")
+            @if($data->role=="worker")
             <div class="row">
               <div class="col-lg-4">
                 <h6>Past Projects</h6>
@@ -123,7 +123,7 @@
             @endif
             
             <div id="slideToContent">    
-            @if(Auth::user()->role=="worker")
+            @if($data->role=="worker")
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
                   <h2 style="text-align: center;vertical-align: middle;">3</h2>
@@ -148,7 +148,7 @@
                   <h5>Projects on scheduled</h5>
                 </div>
               </div>
-            @elseif(Auth::user()->role == "po")
+            @elseif($data->role == "po")
               <h3 style="color: #6495ED">Projects by user <span style="color: black">{{$data->username}}</span></h3>
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
@@ -184,10 +184,6 @@
             @endif
             </div>
             <br>
-            <div id="btEditcuUser">
-              <button class="btn btn-success" id="editCurrentProfile">Edit Profile</button>
-              <button class="btn btn-success" id="editCurrentProfileSave" style="display: none">Save</button>
-            </div>
           </div>
         </div>
       </div>

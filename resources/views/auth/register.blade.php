@@ -72,6 +72,7 @@
                           <button type="submit" class="form-control btn btn-primary">Sign Up</button>
                         </div>
                       </form>
+                      <p>By registering you confirm that you accept the <a href="">User Agreement</a></p>
                       <hr>
                       <p>Already have an account? <a href="{{route('login')}}">Sign In</a></p>
                   </div>

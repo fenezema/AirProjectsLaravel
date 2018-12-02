@@ -3,9 +3,9 @@
 
       <div id="logo" class="pull-left">
         @auth
-          <h1><a href="{{route('home')}}" class="scrollto">Air<span>Project</span></a></h1>
+          <h1><a href="{{route('home')}}" class="scrollto"><img src="apFront/img/logo.png" alt="" style="height: 50px;" class="img-fluid">Air<span>Project</span></a></h1>
         @else
-          <h1><a href="{{route('landing')}}" class="scrollto">Air<span>Project</span></a></h1>
+          <h1><a href="{{route('landing')}}" class="scrollto"><img src="apFront/img/logo.png" alt="" style="height: 50px;" class="img-fluid">Air<span>Project</span></a></h1>
         @endif
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->

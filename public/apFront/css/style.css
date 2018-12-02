@@ -14,12 +14,12 @@ body {
 }
 
 a {
-  color: #50d8af;
+  color: #FFBB00;
   transition: 0.5s;
 }
 
 a:hover, a:active, a:focus {
-  color: #51d8af;
+  color: #FFBB00;
   outline: none;
   text-decoration: none;
 }
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #50d8af;
+  background: #FFBB00;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -57,13 +57,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:focus {
-  background: #50d8af;
+  background: #FFBB00;
   color: #fff;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #0c2e8a;
+  background: #0065FF;
   color: #fff;
 }
 
@@ -83,11 +83,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .contact-info a:hover {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #topbar .contact-info i {
-  color: #50d8af;
+  color: #FFBB00;
   padding: 4px;
 }
 
@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #topbar .social-links a:first-child {
@@ -135,13 +135,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header #logo h1 a {
-  color: #0c2e8a;
+  color: #0065FF;
   line-height: 1;
   display: inline-block;
 }
 
 #header #logo h1 a span {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #header #logo img {
@@ -159,13 +159,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #head h1 a{
-  color: #0c2e8a;
+  color: #0065FF;
   line-height: 1;
   display: inline-block;
 }
 
 #head h1 a span{
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 @media (max-width: 768px) {
@@ -207,14 +207,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content h2 {
-  color: #0c2e8a;
+  color: #0065FF;
   margin-bottom: 30px;
   font-size: 64px;
   font-weight: 700;
 }
 
 #intro .intro-content h2 span {
-  color: #50d8af;
+  color: #FFBB00;
   text-decoration: underline;
 }
 
@@ -238,23 +238,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .intro-content .btn-get-started {
-  background: #0c2e8a;
-  border: 2px solid #0c2e8a;
+  background: #0065FF;
+  border: 2px solid #0065FF;
 }
 
 #intro .intro-content .btn-get-started:hover {
   background: none;
-  color: #0c2e8a;
+  color: #0065FF;
 }
 
 #intro .intro-content .btn-projects {
-  background: #50d8af;
-  border: 2px solid #50d8af;
+  background: #FFBB00;
+  border: 2px solid #FFBB00;
 }
 
 #intro .intro-content .btn-projects:hover {
   background: none;
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #intro #intro-carousel {
@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu li:hover > a, .nav-menu > .menu-active > a {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 .nav-menu > li {
@@ -396,7 +396,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 .nav-menu ul ul {
@@ -483,11 +483,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #mobile-nav ul .menu-item-active {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #mobile-body-overly {
@@ -525,7 +525,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .section-header h2 {
   font-size: 32px;
-  color: #0c2e8a;
+  color: #0065FF;
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
@@ -538,7 +538,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   width: 50px;
   height: 3px;
-  background: #50d8af;
+  background: #FFBB00;
   bottom: 0;
   left: 0;
 }
@@ -574,7 +574,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .content h2 {
-  color: #0c2e8a;
+  color: #0065FF;
   font-weight: 700;
   font-size: 36px;
   font-family: "Raleway", sans-serif;
@@ -599,7 +599,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #about .content ul {
@@ -645,8 +645,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i:before {
-  background: #0c2e8a;
-  background: linear-gradient(45deg, #50d8af 0%, #a3ebd5 100%);
+  background: #0065FF;
+  background: linear-gradient(45deg, #0065FF 0%, #0065FF 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -717,7 +717,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #clients .owl-dot.active {
-  background-color: #50d8af;
+  background-color: #0065FF;
 }
 
 /* Our Portfolio Section
@@ -856,13 +856,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #testimonials .owl-dot.active {
-  background-color: #50d8af;
+  background-color: #FFBB00;
 }
 
 /* Call To Action Section
 --------------------------------*/
 #call-to-action {
-  background: #081e5b;
+  background: #0065FF;
   background-size: cover;
   padding: 40px 0;
 }
@@ -900,8 +900,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #call-to-action .cta-btn:hover {
-  background: #50d8af;
-  border: 3px solid #50d8af;
+  background: #FFBB00;
+  border: 3px solid #FFBB00;
 }
 
 /* Our Team Section
@@ -926,7 +926,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .details {
-  background: #50d8af;
+  background: #FFBB00;
   color: #fff;
   padding: 15px;
   border-radius: 0 0 3px 3px;
@@ -972,7 +972,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #contact .contact-info address, #contact .contact-info p {
@@ -993,7 +993,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .contact-info a:hover {
-  color: #50d8af;
+  color: #FFBB00;
 }
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
@@ -1025,8 +1025,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form #sendmessage {
-  color: #50d8af;
-  border: 1px solid #50d8af;
+  color: #FFBB00;
+  border: 1px solid #FFBB00;
   display: none;
   text-align: center;
   padding: 15px;
@@ -1064,7 +1064,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form button[type="submit"] {
-  background: #50d8af;
+  background: #FFBB00;
   border: 0;
   border-radius: 3px;
   padding: 10px 30px;
@@ -1074,7 +1074,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form button[type="submit"]:hover {
-  background: #2dc899;
+  background: #0065FF;
 }
 
 /*--------------------------------------------------------------

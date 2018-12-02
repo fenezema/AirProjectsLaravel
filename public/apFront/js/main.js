@@ -1,4 +1,4 @@
-$(document).ready(function( ) {
+$(document).ready(function() {
 
   // Back to top button
   $(window).scroll(function() {
@@ -195,9 +195,9 @@ $(document).ready(function( ) {
           }
       });
   });
-  
+
+  var skill_tags = [];
   $('#homeDivSkillFilter').ready(function(){
-      var skill_tags = [];
       $.get('sidenavData',function(res){
           console.log(res);
           for (var i = 0; i < res.length; i++) {
@@ -292,6 +292,21 @@ $(document).ready(function( ) {
 
           $('#editCurrentProfile').toggle();
           $('#editCurrentProfileSave').toggle();
+      });
+  });
+
+  $('#fillProject').ready(function(){
+      $.get('ptype_select',function(res){
+          console.log("fillProject");
+          console.log(res)
+          for (var i = 0; i < res.length; i+=1) {
+              $('#projectType_select').append('<option value="'+res[i].id+'">'+res[i].type_name+'</option>');
+          }
+      });
+      console.log("hehe")
+      console.log(skill_tags);
+      $('#makeProjectSkill').autocomplete({
+          source:skill_tags
       });
   });
 });

@@ -11,25 +11,21 @@
                   <h1><a href="#">Air<span>Project</span></a></h1>
                 </div>
               </div>
-                <div style="margin-top: 1em;margin-bottom: 2em;">
+                <div style="margin-top: 1em;margin-bottom: 2em;" id="fillProject">
                 <form method="POST" action="{{route('storeProject')}}">
                   @csrf
                   <h5 style="font-weight: bold;">Tell us your projects</h5>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
-                    <input class="form-control" type="text" name="project-name" placeholder="Name of your project">
+                    <input class="form-control" type="text" name="pname" placeholder="Name of your project">
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
-                    <select class="form-control" name="project-type">
+                    <select class="form-control" name="projecttype_id" id="projectType_select">
                       <option selected>Your project type</option>
-                      <option value="1">1</option>
-                      <option value="1">1</option>
-                      <option value="1">1</option>
-                      <option value="1">1</option>
-                      <option value="1">1</option>
+                      
                     </select>
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
-                    <textarea class="form-control" name="project-description" placeholder="Your project descryption" rows="5"></textarea>
+                    <textarea class="form-control" name="pdescription" placeholder="Your project descryption" rows="5"></textarea>
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
                     <div class="custom-file">
@@ -38,7 +34,7 @@
                     </div>
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
-                    <input class="form-control" type="text" name="project-skill" placeholder="What skill are required" data-role="tagsinput">
+                    <input class="form-control" type="text" id="makeProjectSkill" name="project-skill" placeholder="What skill are required" data-role="tagsinput">
                   </div>
                 </form>
                 </div>

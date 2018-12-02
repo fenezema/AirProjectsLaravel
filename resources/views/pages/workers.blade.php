@@ -82,9 +82,9 @@
                 </h4>
                 <p class="description">{{$data->email}} {{$data->phone}}</p>
                 <p class="description">
-                  <a href="#" style="margin-right: 1em;">HTML</a>
-                  <a href="#" style="margin-right: 1em;">PHP</a>
-                  <a href="#" style="margin-right: 1em;">Graphic Design</a>
+                @foreach($data->tags as $tagnya)
+                  <a href="#" style="margin-right: 1em;">{{$tagnya->utag}}</a>
+                @endforeach
                 </p>
                 <p class="description">{{$data->pdescription}}</p>
                 <p class="description" style="font-size: 20px;margin-top: 1em;">Level : <span class="badge badge-pill badge-info">

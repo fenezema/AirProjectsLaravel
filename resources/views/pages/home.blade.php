@@ -55,31 +55,31 @@
         </div>
           <div class="col-lg-9">
             <div class="box wow fadeInRight" data-wow-delay="0.2s">
-            <div class="row">
-              <div class="col-sm-7" align="left"><label id="projectCount">{{$datas_count}} projects found</label></div>
-              <div class="col-sm-2"></div>
-              <div class="col-sm-2" align="left">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Sort by : 
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Recommended</a>
-                    <a class="dropdown-item" href="#">Newest first</a>
-                    <a class="dropdown-item" href="#">Highest budget first</a>
+              <div class="row">
+                <div class="col-sm-7" align="left"><label id="projectCount">{{$datas_count}} projects found</label></div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2" align="left">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Sort by : 
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Recommended</a>
+                      <a class="dropdown-item" href="#">Newest first</a>
+                      <a class="dropdown-item" href="#">Highest budget first</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
             <div id="showProject" class="box wow fadeInRight" data-wow-delay="0.2s">
               @foreach($datas as $data)
               <div>
                 <div class="icon"><i class="fa fa-grav"></i></div>
                 <h4 class="title"><a href="">{{$data->pname}}</a></h4>
                 <p class="description">
-                  <a href="#" style="margin-right: 1em;">HTML</a>
-                  <a href="#" style="margin-right: 1em;">PHP</a>
-                  <a href="#" style="margin-right: 1em;">Graphic Design</a>
+                @foreach($data->ptags as $tagnya)
+                  <a href="#" style="margin-right: 1em;">{{$tagnya->ptag}}</a>
+                @endforeach
                 </p>
                 <p class="description">{{$data->pdescription}}</p>
                 <p class="description" style="font-size: 20px;margin-top: 1em;"><span class="badge badge-pill badge-success">Rp. {{$data->pprice}}</span></p>

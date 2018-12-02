@@ -30,7 +30,10 @@ class HomeController extends Controller
     public function index()
     {
         // $datas = User::where('role',"worker")->get();
-        $datas = User::all();
+        $datas = User::where('role',"worker")->get();
+        foreach ($datas as $data) {
+            $data->tags = $data->usertag()->get();
+        }
         $datas_count = count($datas);
         return view('pages.workers',compact('datas','datas_count'));
     }
@@ -38,6 +41,8 @@ class HomeController extends Controller
     public function profile()
     {
         $data = User::find(Auth::user()->id);
+        $data->tags = $data->usertag()->get();
+        
         return view('pages.profile',compact('data'));
     }
 

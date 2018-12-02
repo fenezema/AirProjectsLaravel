@@ -83,6 +83,17 @@
             <h2 id="cuName">{{$data->lastname}}, {{$data->firstname}}</h2>
             <h3 id="cuDescTitle">{{$data->descTitle}}</h3>
             <p id="cuDesc">{{$data->describe}}</p>
+            @if(Auth::user()->role=="worker")
+            <div class="box wow fadeInRight" data-wow-delay="0.2s">
+              <h5>I'm good with <i class="fa fa-edit"></i></h5>
+              <br>
+              <div class="row" id="editSkills">
+                @for($i = 0;$i< 3;$i+=1 )
+                <img class="img-responsive img-circle" src="{{asset('resources/logo/'.$data->tags[$i]->utag.'.png')}}" title="{{$data->tags[$i]->utag}}" style="height: 20%;">
+                @endfor
+              </div>
+            </div>
+            @endif
           </div>
 
 
@@ -90,6 +101,7 @@
             <h3>Balance : </h3>
             <h4><mark>$ {{$data->saldo}}</mark></h4>
             <br>
+            @if(Auth::user()->role=="worker")
             <div class="row">
               <div class="col-lg-4">
                 <h6>Past Projects</h6>
@@ -104,32 +116,68 @@
                 <h6>Projects Stats</h6>
               </div>
             </div>
+            @endif
             
             <div id="slideToContent">    
-            <div class="row">
-              <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                <h2 style="text-align: center;vertical-align: middle;">3</h2>
+            @if(Auth::user()->role=="worker")
+              <div class="row">
+                <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
+                  <h2 style="text-align: center;vertical-align: middle;">3</h2>
+                </div>
+                <div class="col-lg-8 content">
+                  <h5>Projects Taken</h5>
+                </div>
               </div>
-              <div class="col-lg-8 content">
-                <h5>Projects Taken</h5>
+              <div class="row">
+                <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
+                  <h2 style="text-align: center;vertical-align: middle;">2</h2>
+                </div>
+                <div class="col-lg-8 content">
+                  <h5>Projects Finished</h5>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                <h2 style="text-align: center;vertical-align: middle;">2</h2>
+              <div class="row">
+                <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
+                  <h2 style="position: relative;top: 50%;transform: translateY(-50%);font-size: 25px">100%</h2>
+                </div>
+                <div class="col-lg-8 content">
+                  <h5>Projects on scheduled</h5>
+                </div>
               </div>
-              <div class="col-lg-8 content">
-                <h5>Projects Finished</h5>
+            @elseif(Auth::user()->role == "po")
+              <h3 style="color: #6495ED">Projects by user <span style="color: black">{{$data->username}}</span></h3>
+              <div class="row">
+                <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
+                  <h2 style="text-align: center;vertical-align: middle;">93</h2>
+                </div>
+                <div class="col-lg-8 content">
+                  <h5>Past Projects</h5>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                <h2 style="position: relative;top: 50%;transform: translateY(-50%);font-size: 25px">100%</h2>
+              <div class="row">
+                <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
+                  <h2 style="text-align: center;vertical-align: middle;">3</h2>
+                </div>
+                <div class="col-lg-8 content">
+                  <h5>Ongoing Projects</h5>
+                </div>
               </div>
-              <div class="col-lg-8 content">
-                <h5>Projects on scheduled</h5>
+              
+              <br>
+              <div class="content">
+                <h3 style="color: #6495ED">Recents Projects</h3>
               </div>
-            </div>
+              
+              <h5>Phalcon Website for DarrenJE Institution Internal Blockchain Forum</h5>
+              <p><a href="#">See more</a></p>
+              <hr>
+              <h5>An IOS/Android Project</h5>
+              <p><a href="#">See more</a></p>
+              <hr>
+              <h5>Build API</h5>
+              <p><a href="#">See more</a></p>
+              <hr>
+            @endif
             </div>
             <br>
             <div id="btEditcuUser">

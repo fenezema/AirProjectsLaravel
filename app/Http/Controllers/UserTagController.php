@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Projects;
+use App\UserTag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ProjectsController extends Controller
+class UserTagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,19 +14,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $datas = Projects::all();
-        foreach ($datas as $data ) {
-            $data->ptags = $data->projecttag()->get();
-        }
-        $datas_count = count($datas);
-        return view('pages.home',compact('datas','datas_count'));
-    }
-
-    public function byProjectType($type)
-    {
-        $datas = Projects::where('projecttype_id',$type)->get();
-        $datas_count = count($datas);
-        return view('pages.home',compact('datas','datas_count'));
+        //
     }
 
     /**
@@ -54,10 +41,10 @@ class ProjectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\UserTag  $userTag
      * @return \Illuminate\Http\Response
      */
-    public function show(Projects $projects)
+    public function show(UserTag $userTag)
     {
         //
     }
@@ -65,10 +52,10 @@ class ProjectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\UserTag  $userTag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Projects $projects)
+    public function edit(UserTag $userTag)
     {
         //
     }
@@ -77,10 +64,10 @@ class ProjectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Projects  $projects
+     * @param  \App\UserTag  $userTag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Projects $projects)
+    public function update(Request $request, UserTag $userTag)
     {
         //
     }
@@ -88,10 +75,10 @@ class ProjectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Projects  $projects
+     * @param  \App\UserTag  $userTag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projects $projects)
+    public function destroy(UserTag $userTag)
     {
         //
     }

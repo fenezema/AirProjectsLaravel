@@ -40,7 +40,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Permintaan');
     }
 
-    public function projecttag(){
-        return $this->hasMany('App\ProjectTag');
+    public function usertag(){
+        return $this->hasMany('App\UserTag');
     }
 }

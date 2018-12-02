@@ -17,4 +17,8 @@ class Projects extends Model
     public function projecttype(){
     	return $this->belongsTo('App\ProjectType');
     }
+
+    public function projecttag(){
+    	return $this->hasMany('App\ProjectTag');
+    }
 }

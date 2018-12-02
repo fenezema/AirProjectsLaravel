@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectTag extends Model
+class UserTag extends Model
 {
     protected $fillable = [
-    	'projects_id','ptag',
+    	'user_id', 'utag',
     ];
 
     public function user(){
-    	return $this->belongsTo('App\Projects');
+    	return $this->belongsTo('App\User');
     }
 }

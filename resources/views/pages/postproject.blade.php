@@ -12,6 +12,8 @@
                 </div>
               </div>
                 <div style="margin-top: 1em;margin-bottom: 2em;">
+                <form method="POST" action="{{route('storeProject')}}">
+                  @csrf
                   <h5 style="font-weight: bold;">Tell us your projects</h5>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
                     <input class="form-control" type="text" name="project-name" placeholder="Name of your project">
@@ -38,6 +40,7 @@
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
                     <input class="form-control" type="text" name="project-skill" placeholder="What skill are required" data-role="tagsinput">
                   </div>
+                </form>
                 </div>
                 <div class="form-group">
                   <button type="button" class="btn btn-primary">Post Project</button>

@@ -38,6 +38,13 @@ class HomeController extends Controller
         return view('pages.workers',compact('datas','datas_count'));
     }
 
+    public function userdetail($id){
+        $data = User::find($id);
+        $data->tags = $data->usertag()->get();
+        
+        return view('pages.userdetail',compact('data'));   
+    }
+
     public function profile()
     {
         $data = User::find(Auth::user()->id);

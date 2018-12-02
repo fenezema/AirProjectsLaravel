@@ -74,8 +74,8 @@
             <div id="showProject" class="box wow fadeInRight" data-wow-delay="0.2s">
               @foreach($datas as $data)
               <div>
-                <div class="icon"><img class="img-fluid" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 120px;margin-right: 1em;"></div>
-                <h4 class="title"><a href="">{{$data->firstname}} {{$data->lastname}}</a>
+                <div class="icon"><img class="img-fluid" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 150px;margin-right: 1em;"></div>
+                <h4 class="title"><a href="{{URL::to('/workers/'.$data->id)}}">{{$data->firstname}} {{$data->lastname}}</a>
                   @if($data->membership=="member")
                     <i class="fa fa-check-circle"></i>
                   @endif

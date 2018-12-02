@@ -26,14 +26,9 @@ Route::get('/profile','HomeController@profile')->name('profile')->middleware('au
 Route::post('/saveProfile','HomeController@saveProfile')->middleware('auth');
 Route::get('/showProjects/{type}','ProjectsController@byProjectType')->name('byProjectType')->middleware('auth');
 Route::get('/workers','HomeController@index')->name('workers')->middleware('auth');
+Route::get('/workers/{id}','HomeController@userdetail')->middleware('auth');
 Route::get('/makeNew','ProjectsController@create')->name('newProject');
-
-/*
-sorry buat nyoba
-*/
-Route::get('/post-project', function () {
-    return view('pages.postproject');
-})->name('postproject');
+Route::post('/makeNew','ProjectsController@store')->name('storeProject');
 Route::get('/project', function () {
     return view('pages.project');
 })->name('project');

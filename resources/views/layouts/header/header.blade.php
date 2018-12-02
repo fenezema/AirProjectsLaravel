@@ -50,7 +50,9 @@
               </li>
             </ul>
           </li>
-          <li class="menu-active"><a href="{{route('newProject')}}">Post a Project</a></li>
+          @if(Auth::user()->role=="po")
+            <li class="menu-active"><a href="{{route('newProject')}}">Post a Project</a></li>
+          @endif
         @else
           <li><a href="{{route('login')}}">Sign In</a></li>
           <li><a href="{{route('register')}}">Sign Up</a></li>

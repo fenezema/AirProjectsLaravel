@@ -27,3 +27,8 @@ Route::post('/saveProfile','HomeController@saveProfile')->middleware('auth');
 Route::get('/showProjects/{type}','ProjectsController@byProjectType')->name('byProjectType')->middleware('auth');
 Route::get('/workers','HomeController@index')->name('workers')->middleware('auth');
 Route::get('/makeNew','ProjectsController@create')->name('newProject');
+
+/*
+sorry buat nyoba
+*/
+Route::view('/browse-project','pages/browse-project');

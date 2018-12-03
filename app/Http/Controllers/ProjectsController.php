@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use App\Projects;
+use App\ProjectTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,6 +28,9 @@ class ProjectsController extends Controller
     public function byProjectType($type)
     {
         $datas = Projects::where('projecttype_id',$type)->get();
+        foreach ($datas as $data ) {
+            $data->ptags = $data->projecttag()->get();
+        }
         $datas_count = count($datas);
         return view('pages.home',compact('datas','datas_count'));
     }
@@ -48,6 +53,31 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
+        $ret = Projects::create([
+            'user_id'=>Auth::user()->id,
+            'projecttype_id'=>$request->projecttype_id,
+            'pname'=>$request->pname,
+            'pdescription'=>$request->pdescription,
+            'pprice'=>$request->pprice,
+            'pduration'=>$request->pduration,
+            'pstatus'=>"on going",
+        ]);
+        // $temp = $request->tags.explode('|');
+        // for ($i=0; $i < count($temp); $i++) { 
+        //     ProjectTag::create([
+        //         'projects_id'=>,
+        //         'ptag'=>$temp[$i],,
+        //     ]);
+        // }
+
+        if($ret){
+            return Response::json([
+                'status' => 'success'
+            ]);    
+        }
+        return Response::json([
+            'status' => 'failed'
+        ]);
         
     }
 

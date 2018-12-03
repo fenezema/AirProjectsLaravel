@@ -197,12 +197,20 @@ $(document).ready(function() {
   });
 
   var skill_tags = [];
+  var skill_tags1 = [];
   $('#homeDivSkillFilter').ready(function(){
       $.get('sidenavData',function(res){
           console.log(res);
           for (var i = 0; i < res.length; i++) {
+              var temp = {id:i,text:res[i].tags_name};
               skill_tags.push(res[i].tags_name);
+              skill_tags1.push(temp);
           }
+          $("#e9").select2({
+              data:skill_tags1,
+              placeholder: "What skills are required",
+              allowClear: false
+          });
       });
       $('#homeSkillFilter').autocomplete({
           source: skill_tags
@@ -294,7 +302,7 @@ $(document).ready(function() {
           $('#editCurrentProfileSave').toggle();
       });
   });
-
+  
   $('#fillProject').ready(function(){
       $.get('ptype_select',function(res){
           console.log("fillProject");
@@ -303,10 +311,36 @@ $(document).ready(function() {
               $('#projectType_select').append('<option value="'+res[i].id+'">'+res[i].type_name+'</option>');
           }
       });
-      console.log("hehe")
-      console.log(skill_tags);
-      $('#makeProjectSkill').autocomplete({
-          source:skill_tags
-      });
   });
+
+  $('#submitProject').click(function(){
+      var csrf_ = $('meta[name="csrf-token"]').attr('content');
+      var pname = $('input[name="pname"]').val();
+      var ptype = $('select[name="projecttype_id"]').val();
+      var pdesc = $('textarea[name=pdescription]').val();
+      var pprice = $('input[name=pprice]').val();
+      var pduration = $('input[name=pduration]').val();
+      var temp = $('select[name=ptags]').select2('data');
+      var ptags = "";
+      console.log(ptype);
+
+      for (var i = 0; i < temp.length; i++) {
+          if (i==temp.length-1) {
+              ptags+=temp[i].text  
+          }
+          else{
+              ptags+=temp[i].text+"|"
+          }
+      }
+      console.log(ptags);
+      console.log(csrf_);
+      var post = $.post('makepNew',{_token:csrf_,projecttype_id:ptype,pname:pname,pdescription:pdesc,ptags:ptags,pprice:pprice,pduration:pduration},function(res){
+          $('#fillProject').empty();
+      }).done(function(){
+          $('#fillProject').append('<h5 style="font-weight: bold;">Project Posted!</h5>');
+      }).fail(function(res){
+          console.log(res)
+          $('#fillProject').append('<h5 style="font-weight: bold;">Project Failed to Post!</h5>');
+      });
+  })
 });

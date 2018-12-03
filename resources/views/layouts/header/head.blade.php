@@ -28,6 +28,8 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{asset('apFront/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('apFront/css/select2.css')}}" rel="stylesheet">
+  <link href="{{asset('apFront/css/select2.min.css')}}" rel="stylesheet">
 
   <!-- Toogle Styling -->
   <style>

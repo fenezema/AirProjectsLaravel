@@ -10,4 +10,5 @@
   <script src="{{asset('apFront/lib/owlcarousel/owl.carousel.min.js')}}"></script>
   <script src="{{asset('apFront/lib/magnific-popup/magnific-popup.min.js')}}"></script>
   <script src="{{asset('apFront/lib/sticky/sticky.js')}}"></script>
-  <script type="text/javascript" src="{{asset('apFront/lib/tagsinput/tagsinput.js')}}"></script>
+  <script type="text/javascript" src="{{asset('apFront/lib/typeahead/select2.full.js')}}"></script>
+  <script type="text/javascript" src="{{asset('apFront/lib/typeahead/select2.full.min.js')}}"></script>

@@ -3,7 +3,7 @@
 	<section id="services">
       <div class="container">
         <div class="section-header">
-          <h2>Browse project</h2>
+          <h2>Browse projects</h2>
         </div>
 
         <div class="row">
@@ -14,16 +14,13 @@
                 <form action="" autocomplete="off">
                   <div class="form-group" id="homeDivSkillFilter">
                     <label class="form-control-label">
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter1" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter2" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter3" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter4" class="form-control" type="text" placeholder="Add skill">
-                      <br>
+                      <select name="ptags" class="form-control" id="e1" multiple>
+                      
+                      </select>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label">
                       <button class="btn btn-success" id="searchSkillTags">Search</button>
                     </label>
                   </div>
@@ -75,7 +72,7 @@
               @foreach($datas as $data)
               <div>
                 <div class="icon"><i class="fa fa-grav"></i></div>
-                <h4 class="title"><a href="">{{$data->pname}}</a></h4>
+                <h4 class="title"><a href="{{route('projectid',[$data->id])}}">{{$data->pname}}</a></h4>
                 <p class="description">
                 @foreach($data->ptags as $tagnya)
                   <a href="#" style="margin-right: 1em;">{{$tagnya->ptag}}</a>

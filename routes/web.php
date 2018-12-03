@@ -22,6 +22,7 @@ Route::get('/terms', function () {
 Auth::routes();
 
 Route::get('/home', 'ProjectsController@index')->name('home')->middleware('auth');
+Route::get('/project/{id}', 'ProjectsController@projectdetail')->name('projectid')->middleware('auth');
 Route::get('/navbarData','HomeController@navbarData')->middleware('auth');
 Route::get('/ptype_select','HomeController@navbarData')->middleware('auth');
 Route::get('/sidenavData','HomeController@sidenavData')->middleware('auth');
@@ -31,9 +32,6 @@ Route::get('/profile','HomeController@profile')->name('profile')->middleware('au
 Route::post('/saveProfile','HomeController@saveProfile')->middleware('auth');
 Route::get('/showProjects/{type}','ProjectsController@byProjectType')->name('byProjectType')->middleware('auth');
 Route::get('/workers','HomeController@index')->name('workers')->middleware('auth');
-Route::get('/workers/{id}','HomeController@userdetail')->middleware('auth');
+Route::get('/workers/{id}','HomeController@userdetail')->name('workersid')->middleware('auth');
 Route::get('/makeNew','ProjectsController@create')->middleware('auth')->name('newProject');
 Route::post('/makepNew','ProjectsController@store')->middleware('auth');
-Route::get('/project', function () {
-    return view('pages.project');
-})->name('project');

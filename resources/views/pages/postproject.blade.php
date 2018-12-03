@@ -23,7 +23,7 @@
                     </select>
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
-                    <textarea class="form-control" name="pdescription" placeholder="Your project descryption" rows="5"></textarea>
+                    <textarea class="form-control" name="pdescription" placeholder="Your project description" rows="5"></textarea>
                   </div>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
                     <div class="custom-file">

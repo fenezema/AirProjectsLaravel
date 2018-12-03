@@ -17,7 +17,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $datas = Projects::all();
+        $datas = Projects::orderBy('created_at','desc')->get();
         foreach ($datas as $data ) {
             $data->ptags = $data->projecttag()->get();
         }
@@ -27,12 +27,19 @@ class ProjectsController extends Controller
 
     public function byProjectType($type)
     {
-        $datas = Projects::where('projecttype_id',$type)->get();
+        $datas = Projects::where('projecttype_id',$type)->orderBy('created_at','desc')->get();
         foreach ($datas as $data ) {
             $data->ptags = $data->projecttag()->get();
         }
         $datas_count = count($datas);
         return view('pages.home',compact('datas','datas_count'));
+    }
+
+    public function projectdetail($id)
+    {
+        $data = Projects::find($id);
+        $data->ptags = $data->projecttag()->get();
+        return view('pages.project',compact('data'));
     }
 
     /**
@@ -62,13 +69,16 @@ class ProjectsController extends Controller
             'pduration'=>$request->pduration,
             'pstatus'=>"on going",
         ]);
-        // $temp = $request->tags.explode('|');
-        // for ($i=0; $i < count($temp); $i++) { 
-        //     ProjectTag::create([
-        //         'projects_id'=>,
-        //         'ptag'=>$temp[$i],,
-        //     ]);
-        // }
+
+        $data = Projects::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->first();
+        $id = $data->id;
+        $temp = explode('|',$request->ptags);
+        for ($i=0; $i < count($temp); $i++) { 
+            ProjectTag::create([
+                'projects_id'=>$id,
+                'ptag'=>$temp[$i],
+            ]);
+        }
 
         if($ret){
             return Response::json([

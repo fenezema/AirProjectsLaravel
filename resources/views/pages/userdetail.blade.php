@@ -92,9 +92,9 @@
               <h5>I'm good with</h5>
               <br>
               <div class="row" id="editSkills">
-                @for($i = 0;$i< 3;$i+=1 )
-                <img class="img-responsive img-circle" src="{{asset('resources/logo/'.$data->tags[$i]->utag.'.png')}}" title="{{$data->tags[$i]->utag}}" style="height: 20%;">
-                @endfor
+                @foreach($data->tags as $tagnya )
+                <img class="img-responsive img-circle" src="{{asset('resources/logo/'.$tagnya->utag.'.png')}}" title="{{$tagnya->utag}}" style="height: 20%;">
+                @endforeach
               </div>
             </div>
             @endif

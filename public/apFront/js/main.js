@@ -191,7 +191,7 @@ $(document).ready(function() {
           console.log(res);
           var nav = $('#navbar-dropdownJenis');
           for (var i = 0; i < res.length; i++) {
-              nav.append('<li><a href="showProjects/'+res[i].id+'">'+res[i].type_name+'</a></li>');
+              nav.append('<li><a href="/AirProjectsLaravel/public/showProjects/'+res[i].id+'">'+res[i].type_name+'</a></li>');
           }
       });
   });
@@ -211,36 +211,14 @@ $(document).ready(function() {
               placeholder: "What skills are required",
               allowClear: false
           });
-      });
-      $('#homeSkillFilter').autocomplete({
-          source: skill_tags
-      });
-      $('#homeSkillFilter1').autocomplete({
-          source: skill_tags
-      });
-      $('#homeSkillFilter2').autocomplete({
-          source: skill_tags
-      });
-      $('#homeSkillFilter3').autocomplete({
-          source: skill_tags
-      });
-      $('#homeSkillFilter4').autocomplete({
-          source: skill_tags
+          $("#e1").select2({
+              data:skill_tags1,
+              placeholder: "What skills are required",
+              allowClear: false
+          });
       });
   });
   
-  // $('#homeSkillFilter').keyup(function(){
-  //     console.log(string);
-  //     $.get('sidenavData',function(res){
-  //         console.log(res);
-  //         for (var i = 0; i < res.length; i++) {
-  //             skill_tags.append(res[i].tags_name);
-  //         }
-  //         $('#homeSkillFilter').autocomplete({
-  //             source: skill_tags
-  //         });
-  //     });
-  // });
   $('#editCurrentProfile').click(function(){
       var tempp = $('#cuGithub').text();
       $('#cuGithub').empty();

@@ -43,4 +43,8 @@ class User extends Authenticatable
     public function usertag(){
         return $this->hasMany('App\UserTag');
     }
+
+    public function penawaran(){
+        return $this->hasMany('App\Penawaran');
+    }
 }

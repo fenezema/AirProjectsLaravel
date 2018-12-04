@@ -19,6 +19,8 @@ class CreateProjectsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('projecttype_id')->unsigned();
             $table->foreign('projecttype_id')->references('id')->on('project_types');
+            $table->string('worker_id')->nullable();
+            $table->string('worker_names')->nullable();
             $table->string('pname');
             $table->text('pdescription');
             $table->string('pprice');

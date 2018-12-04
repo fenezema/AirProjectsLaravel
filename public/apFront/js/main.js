@@ -320,5 +320,17 @@ $(document).ready(function() {
           console.log(res)
           $('#fillProject').append('<h5 style="font-weight: bold;">Project Failed to Post!</h5>');
       });
-  })
+  });
+
+  $('#requestToPO').click(function(){
+      console.log($('#pid').val());
+      $.get('/AirProjectsLaravel/public/toPo/'+$('#pid').val()+"/"+$('#uid').val(),function(res){
+          alert(res.msg)
+      }).done(function(res){
+          alert("Success");
+      }).fail(function(res){
+          console.log(res);
+          alert("failed");
+      });
+  });
 });

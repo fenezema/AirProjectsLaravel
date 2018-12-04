@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Projects extends Model
 {
     protected $fillable = [
-        'user_id', 'projecttype_id', 'pname', 'pdescription', 'pprice', 'pduration', 'ptags', 'pstatus', 'pketerangan', 'purl',
+        'user_id', 'projecttype_id', 'worker_id', 'worker_names','pname', 'pdescription', 'pprice', 'pduration', 'ptags', 'pstatus', 'pketerangan', 'purl',
     ];
 
     public function user(){
@@ -21,4 +21,8 @@ class Projects extends Model
     public function projecttag(){
     	return $this->hasMany('App\ProjectTag');
     }
+
+    public function penawaran(){
+        return $this->hasMany('App\Penawaran');
+    }   
 }

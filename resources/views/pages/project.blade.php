@@ -27,7 +27,11 @@
                   <a href="">{{$tag->ptag}}</a>
                 @endforeach
               </h7>
-              <button type="button" class="btn btn-danger pull-right">Take this projects</button>
+              @if(Auth::user()->role=="worker")
+              <input id="pid" hidden value="{{$data->id}}">
+              <input id="uid" hidden value="{{Auth::user()->id}}">
+              <button type="button"  id="requestToPO" class="btn btn-danger pull-right">Take this projects</button>
+              @endif
             </div>
           </div>
       </div>

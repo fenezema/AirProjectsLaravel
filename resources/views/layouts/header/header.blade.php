@@ -36,7 +36,14 @@
             <a>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</a>
             <ul>
               <li><a href="{{route('profile')}}">My Profile</a></li>
-              <li><a href="#">My Project</a></li>
+              @if(Auth::user()->role=="po")
+              <li><a href="{{route('myProjects')}}">My Project</a></li>
+              @elseif(Auth::user()->role=="worker")
+              <li><a href="{{route('workerProjects')}}">My Project</a></li>
+              @endif
+              @if(Auth::user()->role=="po")
+              <li><a href="{{route('myRequest')}}">Requests</a></li>
+              @endif
               <li class="nav-item dropdown">
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();

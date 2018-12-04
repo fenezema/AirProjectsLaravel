@@ -35,3 +35,10 @@ Route::get('/workers','HomeController@index')->name('workers')->middleware('auth
 Route::get('/workers/{id}','HomeController@userdetail')->name('workersid')->middleware('auth');
 Route::get('/makeNew','ProjectsController@create')->middleware('auth')->name('newProject');
 Route::post('/makepNew','ProjectsController@store')->middleware('auth');
+Route::get('/myprojects','ProjectsController@myprojects')->middleware('auth')->name('myProjects');
+Route::get('/mywprojects','ProjectsController@myprojects')->middleware('auth')->name('workerProjects');
+Route::get('/myrequest','ProjectsController@myrequest')->middleware('auth')->name('myRequest');
+Route::get('/toPo/{pid}/{uid}','PenawaranController@store')->middleware('auth');
+Route::get('/test',function(){
+	return view('pages.myproject');
+});

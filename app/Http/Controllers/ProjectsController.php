@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Response;
+use App\User;
 use App\Projects;
 use App\ProjectTag;
 use Illuminate\Http\Request;
@@ -63,6 +64,7 @@ class ProjectsController extends Controller
         $ret = Projects::create([
             'user_id'=>Auth::user()->id,
             'projecttype_id'=>$request->projecttype_id,
+            'worker_id'=>"no worker",
             'pname'=>$request->pname,
             'pdescription'=>$request->pdescription,
             'pprice'=>$request->pprice,
@@ -100,6 +102,45 @@ class ProjectsController extends Controller
     public function show(Projects $projects)
     {
         //
+    }
+
+    public function myprojects()
+    {
+        $datas = Projects::where('user_id',Auth::user()->id)->where('worker_id','<>',"no worker")->get();
+        foreach ($datas as $data) {
+            $worker = User::find($data->worker_id);
+            $data->worker_id = $worker->firsname+" "+$worker->lastname;
+        }
+
+        return view('pages.myproject',compact('datas'));
+    }
+
+    public function mywprojects()
+    {
+        $datas = Projects::where('worker_id',Auth::user()->id)->get();
+        foreach ($datas as $data) {
+            $worker = User::find($data->worker_id);
+            $data->worker_id = $worker->firsname+" "+$worker->lastname;
+        }
+
+        return view('pages.myproject',compact('datas'));
+    }
+
+    public function myrequest()
+    {
+        $datas = Projects::where('user_id',Auth::user()->id)->where('worker_id',"no worker")->get();
+        foreach ($datas as $data) {
+            $worker = $data->penawaran()->get();
+            foreach ($worker as $nama_worker) {
+                $nama = $nama_worker->user()->get();
+                foreach ($nama as $nm) {
+                    $nama_worker->wname = $nm->firstname." ".$nm->lastname;
+                }
+            }
+            $data->worker_names = $worker;
+        }
+
+        return view('pages.myrequest',compact('datas'));
     }
 
     /**

@@ -102,8 +102,7 @@
 
 
           <div class="col-lg-3 content">
-            <h3>Balance : </h3>
-            <h4><mark>$ {{$data->saldo}}</mark></h4>
+            
             <br>
             @if($data->role=="worker")
             <div class="row">
@@ -126,7 +125,7 @@
             @if($data->role=="worker")
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                  <h2 style="text-align: center;vertical-align: middle;">3</h2>
+                  <h2 style="text-align: center;vertical-align: middle;">{{$n_data_projects}}</h2>
                 </div>
                 <div class="col-lg-8 content">
                   <h5>Projects Taken</h5>
@@ -134,7 +133,7 @@
               </div>
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                  <h2 style="text-align: center;vertical-align: middle;">2</h2>
+                  <h2 style="text-align: center;vertical-align: middle;">{{$n_data_finish_projects}}</h2>
                 </div>
                 <div class="col-lg-8 content">
                   <h5>Projects Finished</h5>
@@ -142,7 +141,7 @@
               </div>
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                  <h2 style="position: relative;top: 50%;transform: translateY(-50%);font-size: 25px">100%</h2>
+                  <h2 style="position: relative;top: 50%;transform: translateY(-50%);font-size: 25px">{{$precentage}}%</h2>
                 </div>
                 <div class="col-lg-8 content">
                   <h5>Projects on scheduled</h5>
@@ -152,7 +151,7 @@
               <h3 style="color: #6495ED">Projects by user <span style="color: black">{{$data->username}}</span></h3>
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                  <h2 style="text-align: center;vertical-align: middle;">93</h2>
+                  <h2 style="text-align: center;vertical-align: middle;">{{$n_data_projects}}</h2>
                 </div>
                 <div class="col-lg-8 content">
                   <h5>Past Projects</h5>
@@ -160,7 +159,7 @@
               </div>
               <div class="row">
                 <div class="col-lg-4 content" style="background-color:    #FAEBD7;border-bottom: 2px solid white">
-                  <h2 style="text-align: center;vertical-align: middle;">3</h2>
+                  <h2 style="text-align: center;vertical-align: middle;">{{$n_data_ongoing_projects}}</h2>
                 </div>
                 <div class="col-lg-8 content">
                   <h5>Ongoing Projects</h5>

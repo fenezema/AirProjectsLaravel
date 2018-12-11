@@ -9,7 +9,6 @@
           <div class="col-lg-3">
             
             <input type="file" name="filegambar" id="pilihGambar" style="display: none">
-            <canvas id="myCanvas" width="200" height="200"></canvas>
             <img class="img-responsive img-circle" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 25%;"></input>
             
             <div class="container">

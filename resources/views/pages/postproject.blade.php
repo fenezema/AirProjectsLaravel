@@ -12,7 +12,7 @@
                 </div>
               </div>
                 <div style="margin-top: 1em;margin-bottom: 2em;" id="fillProject">
-                  <h5 style="font-weight: bold;">Tell us your projects</h5>
+                  <h5 style="font-weight: bold;">Tell us about your project</h5>
                   <div class="form-group" style="margin-top: 1em;margin-bottom: 1em;">
                     <input class="form-control" type="text" name="pname" placeholder="Name of your project">
                   </div>

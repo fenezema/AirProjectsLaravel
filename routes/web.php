@@ -39,6 +39,7 @@ Route::get('/myprojects','ProjectsController@myprojects')->middleware('auth')->n
 Route::get('/mywprojects','ProjectsController@myprojects')->middleware('auth')->name('workerProjects');
 Route::get('/myrequest','ProjectsController@myrequest')->middleware('auth')->name('myRequest');
 Route::get('/toPo/{pid}/{uid}','PenawaranController@store')->middleware('auth');
+Route::post('/searchBasedOnSkills','ProjectTagController@searchBasedOnSkills')->middleware('auth');
 Route::get('/test',function(){
 	return view('pages.myproject');
 });

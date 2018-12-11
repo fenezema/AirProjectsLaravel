@@ -14,7 +14,7 @@
 	                <p class="description" style="font-size: 20px;margin-top: 1em;">
 	                	<span class="badge badge-pill badge-success" style="margin-right: 1em;">Rp. {{$data->pprice}}</span>
 	                	<span class="badge badge-pill badge-danger" style="margin-right: 1em;">{{$data->pduration}} hari</span>
-	                	<button class="btn btn-primary" type="button" style="margin-left: 20em">Finish</button>
+	                	<!-- <button class="btn btn-primary" type="button" style="margin-left: 20em">Finish --></button>
 	                </p>
 	                <hr>
 				</div>

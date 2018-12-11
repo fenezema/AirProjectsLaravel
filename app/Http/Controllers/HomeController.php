@@ -41,10 +41,10 @@ class HomeController extends Controller
     public function userdetail($id){
         $data = User::find($id);
         $data->tags = $data->usertag()->get();
-        $data_projects = Projects::where('user_id',Auth::user()->id)->get();
-        $data_finish_projects = Projects::where('user_id',Auth::user()->id)->where('pstatus',"finished")->get();
-        $data_ontime_projects = Projects::where('user_id',Auth::user()->id)->where('pstatus',"finished")->where('pketerangan',"on time")->get();
-        $data_ongoing_projects = Projects::where('user_id',Auth::user()->id)->where('pstatus',"on going")->get();
+        $data_projects = Projects::where('user_id',$id)->get();
+        $data_finish_projects = Projects::where('user_id',$id)->where('pstatus',"finished")->get();
+        $data_ontime_projects = Projects::where('user_id',$id)->where('pstatus',"finished")->where('pketerangan',"on time")->get();
+        $data_ongoing_projects = Projects::where('user_id',$id)->where('pstatus',"on going")->get();
         $n_data_projects = count($data_projects);
         $n_data_finish_projects = count($data_finish_projects);
         $n_data_ontime_projects = count($data_ontime_projects);

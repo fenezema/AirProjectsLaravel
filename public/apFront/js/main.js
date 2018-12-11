@@ -202,7 +202,7 @@ $(document).ready(function() {
       $.get('sidenavData',function(res){
           console.log(res);
           for (var i = 0; i < res.length; i++) {
-              var temp = {id:i,text:res[i].tags_name};
+              var temp = {id:res[i].tags_name,text:res[i].tags_name};
               skill_tags.push(res[i].tags_name);
               skill_tags1.push(temp);
           }
@@ -219,6 +219,14 @@ $(document).ready(function() {
       });
   });
   
+  $('#pilihGambar').change(function(){
+    alert($('#pilihGambar').val());
+    var pictureInput = $('#pilihGambar');
+    var myFormData = new FormData();
+    // myFormData.append('pilihGambar', pictureInput.files[0]);
+    alert(myFormData);
+  });
+
   $('#editCurrentProfile').click(function(){
       var tempp = $('#cuGithub').text();
       $('#cuGithub').empty();
@@ -240,6 +248,8 @@ $(document).ready(function() {
       var temp4 = $('#cuDesc').text();
       $('#cuDesc').empty();
 
+      $('#pilihGambar').toggle();
+
       $('#cuGithub').append('<div class="form-group"><input id="saveGithub" name="github" class"form-control" placeholder="github" value="'+tempp+'"></div>');
       $('#cuWebsite').append('<div class="form-group"><input id="saveWebsite" name="website" class"form-control" placeholder="website" value="'+temp+'"></div>');
       $('#cuPhone').append('<div class="form-group"><input id="savePhone" name="phone" class"form-control" placeholder="phone" value="'+temp1+'"></div>');
@@ -252,6 +262,37 @@ $(document).ready(function() {
       $('#editCurrentProfileSave').toggle();
   });
   var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+  $('#searchSkillTags').click(function(){
+      var temp = $('#e1').select2("val");
+      console.log(temp);
+      $.post('searchBasedOnSkills',{_token:CSRF_TOKEN,isi:temp},function(res){
+          console.log("On going");
+      }).done(function(res){
+          console.log(res);
+          console.log(res.length);
+          $('#showProject').empty();
+          for (var i = 0; i < res.length; i++) {
+            var appended = "";
+            var tempData = res[i].projects;
+            for(var j = 0; j < tempData.length;j++){
+                var tempType = tempData[j].projecttype_names;
+                appended += '<div><div class="icon"><i class="fa fa-grav"></i></div><h4 class="title"><a href="">'+tempData[0].pname+'</a></h4><p>'+tempType+'</p><p class="description">';
+                var tempTags = tempData[j].ptags;                
+                for(var k = 0;k<tempTags.length;k++){
+                    console.log(k);
+                    appended += '<a href="#" style="margin-right: 1em;">'+tempTags[k].ptag+'</a>';                    
+                }
+                appended += '</p><p class="description">'+tempData[0].pdescription+'</p><p class="description" style="font-size: 20px;margin-top: 1em;"><span class="badge badge-pill badge-success">Rp. '+tempData[0].pprice+'</span></p></div><hr></div>';                
+            }
+            console.log(appended);
+            $('#showProject').append(appended)            ;
+          }
+      }).fail(function(res){
+          console.log(res);
+      });
+  });
+
   $('#editCurrentProfileSave').click(function(){
       var git = $('#saveGithub').val();
       var web = $('#saveWebsite').val();
@@ -260,6 +301,7 @@ $(document).ready(function() {
       var lname = $('#saveLastname').val();
       var descTitle = $('#saveDescTitle').val();
       var desc = $('#saveDesc').val();
+
       console.log(git);
       console.log(web);
       console.log(phone);

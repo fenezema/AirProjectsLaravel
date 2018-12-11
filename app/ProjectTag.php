@@ -10,7 +10,7 @@ class ProjectTag extends Model
     	'projects_id','ptag',
     ];
 
-    public function user(){
+    public function projects(){
     	return $this->belongsTo('App\Projects');
     }
 }

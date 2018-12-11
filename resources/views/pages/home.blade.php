@@ -11,31 +11,27 @@
             <div class="box wow fadeInRight">
               <div style="padding: 0px">
                 <label><b>Skills</b></label>
-                <form action="" autocomplete="off">
-                  <div class="form-group" id="homeDivSkillFilter">
-                    <label class="form-control-label">
-                      <select name="ptags" class="form-control" id="e1" multiple>
-                      
-                      </select>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-control-label">
-                      <button class="btn btn-success" id="searchSkillTags">Search</button>
-                    </label>
-                  </div>
-                </form>
+                <div class="form-group" id="homeDivSkillFilter">
+                  <label class="form-control-label">
+                    <select name="ptags" class="form-control" id="e1" multiple>
+                    
+                    </select>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">
+                    <button class="btn btn-success" id="searchSkillTags">Search</button>
+                  </label>
+                </div>
               </div>
               <div style="padding: 0px">
                 <hr>
                 <label><b>Budget</b></label>
-                <form>
-                  <div class="form-group">
-                    <input class="form-control-range" type="range" name="budget">
-                    <input class="form-control" type="text" name="min-budget" placeholder="Minimal budget" style="margin-bottom: 1em;margin-top: 1em;">
-                    <input class="form-control" type="text" name="max-budget" placeholder="Maximal budget">
-                  </div>
-                </form>
+                <div class="form-group">
+                  <input class="form-control-range" type="range" name="budget">
+                  <input class="form-control" type="text" name="min-budget" placeholder="Minimal budget" style="margin-bottom: 1em;margin-top: 1em;">
+                  <input class="form-control" type="text" name="max-budget" placeholder="Maximal budget">
+                </div>
               </div>
               <div style="padding: 0px">
                 <hr>
@@ -73,9 +69,10 @@
               <div>
                 <div class="icon"><i class="fa fa-grav"></i></div>
                 <h4 class="title"><a href="{{route('projectid',[$data->id])}}">{{$data->pname}}</a></h4>
+                <p>{{$data->projecttype_names}}</p>
                 <p class="description">
                 @foreach($data->ptags as $tagnya)
-                  <a href="#" style="margin-right: 1em;">{{$tagnya->ptag}}</a>
+                  <a href="#" id="tagsDariProject" style="margin-right: 1em;">{{$tagnya->ptag}}</a>
                 @endforeach
                 </p>
                 <p class="description">{{$data->pdescription}}</p>

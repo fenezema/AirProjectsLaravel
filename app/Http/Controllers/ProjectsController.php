@@ -16,11 +16,21 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function pricer($price)
+    {
+        $string_price = number_format($price,2,',','.');
+        return $string_price;
+    }
     public function index()
     {
         $datas = Projects::orderBy('created_at','desc')->get();
         foreach ($datas as $data ) {
             $data->ptags = $data->projecttag()->get();
+            $temp = $data->projecttype()->get();
+            $data->pprice = $this->pricer(floatval($data->pprice));
+            foreach ($temp as $tp) {
+                $data->{"projecttype_names"} = $tp->type_name;
+            }
         }
         $datas_count = count($datas);
         return view('pages.home',compact('datas','datas_count'));
@@ -31,6 +41,7 @@ class ProjectsController extends Controller
         $datas = Projects::where('projecttype_id',$type)->orderBy('created_at','desc')->get();
         foreach ($datas as $data ) {
             $data->ptags = $data->projecttag()->get();
+            $data->pprice = $this->pricer(floatval($data->pprice));
         }
         $datas_count = count($datas);
         return view('pages.home',compact('datas','datas_count'));
@@ -40,6 +51,11 @@ class ProjectsController extends Controller
     {
         $data = Projects::find($id);
         $data->ptags = $data->projecttag()->get();
+        $temp = $data->find($id)->user()->get();
+        foreach ($temp as $tp) {
+            $data->{"user_names"} = $tp->firstname." ".$tp->lastname;
+        }
+        $data->pprice = $this->pricer(floatval($data->pprice));
         return view('pages.project',compact('data'));
     }
 

@@ -3,7 +3,7 @@
 	<section id="services">
       <div class="container">
         <div class="section-header">
-          <h2>Browse project</h2>
+          <h2>Workers</h2>
         </div>
 
         <div class="row">
@@ -11,34 +11,27 @@
             <div class="box wow fadeInRight">
               <div style="padding: 0px">
                 <label><b>Skills</b></label>
-                <form action="" autocomplete="off">
-                  <div class="form-group" id="homeDivSkillFilter">
-                    <label class="form-control-label">
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter1" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter2" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter3" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <input autocomplete="off" list="datalist" id="homeSkillFilter4" class="form-control" type="text" placeholder="Add skill">
-                      <br>
-                      <button class="btn btn-success" id="searchSkillTags">Search</button>
-                    </label>
-                  </div>
-                </form>
+                <div class="form-group" id="homeDivSkillFilter">
+                  <label class="form-control-label">
+                    <select name="ptags" class="form-control" id="e1" multiple>
+                    
+                    </select>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">
+                    <button class="btn btn-success" id="searchSkillTags">Search</button>
+                  </label>
+                </div>
               </div>
               <div style="padding: 0px">
                 <hr>
                 <label><b>Budget</b></label>
-                <form>
-                  <div class="form-group">
-                    <input class="form-control-range" type="range" name="budget">
-                    <input class="form-control" type="text" name="min-budget" placeholder="Minimal budget" style="margin-bottom: 1em;margin-top: 1em;">
-                    <input class="form-control" type="text" name="max-budget" placeholder="Maximal budget">
-                  </div>
-                </form>
+                <div class="form-group">
+                  <input class="form-control-range" type="range" name="budget">
+                  <input class="form-control" type="text" name="min-budget" placeholder="Minimal budget" style="margin-bottom: 1em;margin-top: 1em;">
+                  <input class="form-control" type="text" name="max-budget" placeholder="Maximal budget">
+                </div>
               </div>
               <div style="padding: 0px">
                 <hr>
@@ -74,7 +67,7 @@
             <div id="showProject" class="box wow fadeInRight" data-wow-delay="0.2s">
               @foreach($datas as $data)
               <div>
-                <div class="icon"><img class="img-fluid" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 150px;margin-right: 1em;"></div>
+                <div class="icon"><img class="img-fluid" src="{{asset('resources/userProfile/'.$data->photo)}}" alt="" style="height: 120px;margin-right: 1em;"></div>
                 <h4 class="title"><a href="{{route('workersid',[$data->id])}}">{{$data->firstname}} {{$data->lastname}}</a>
                   @if($data->membership=="member")
                     <i class="fa fa-check-circle"></i>

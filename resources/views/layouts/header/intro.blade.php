@@ -1,7 +1,7 @@
   <section id="intro">
 
     <div class="intro-content">
-      <img src="apFront/img/logo.png" alt="" class="img-fluid" style="height: 250px;margin-bottom: 2em">
+      <img src="apFront/img/logo.png" alt="" class="img-fluid" style="margin-bottom: 1em;height: 50%">
       <div>
         <a href="#about" class="btn-get-started scrollto">I Want to Hire</a>
         <a href="#portfolio" class="btn-projects scrollto">I Want to Work</a>
